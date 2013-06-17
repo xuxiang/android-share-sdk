@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
 					JSONObject object = Utils.stringToJSONObject(result);
 					if (object != null) {
 						ShareErrUtils.getMessage(ShareWebo.SINA, object.optInt("error_code"));
+					} else {
+						//failed
 					}
 				}
 			});
