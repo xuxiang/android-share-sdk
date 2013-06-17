@@ -4,7 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -105,54 +104,6 @@ public class Utils {
 			e.printStackTrace();
 			return null;
 		}
-	}
-
-	/**
-	 * 对字符串进行MD5加密。
-	 */
-	public static String encryptMD5(String strInput) {
-		StringBuffer buf = null;
-		try {
-			MessageDigest md = MessageDigest.getInstance("MD5");
-			md.update(strInput.getBytes("UTF-8"));
-			byte b[] = md.digest();
-			buf = new StringBuffer(b.length * 2);
-			for (int i = 0; i < b.length; i++) {
-				if (((int) b[i] & 0xff) < 0x10) { /* & 0xff转换无符号整型 */
-					buf.append("0");
-				}
-				buf.append(Long.toHexString((int) b[i] & 0xff)); /* 转换16进制,下方法同 */
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return buf.toString();
-	}
-
-	/**
-	 * 网址汉字编码
-	 */
-	public static String urlEncode(String str) {
-		StringBuffer buf = new StringBuffer();
-		byte c;
-		byte[] utfBuf;
-		try {
-			utfBuf = str.getBytes("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			System.out.println("URLEncode: Failed to get UTF-8 bytes from string.");
-			utfBuf = str.getBytes();
-		}
-		for (int i = 0; i < utfBuf.length; i++) {
-			c = utfBuf[i];
-			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-					|| (c == '.' || c == '-' || c == '*' || c == '_')
-					|| (c == ':' || c == '/' || c == '=' || c == '?' || c == '&' || c == '%')) {
-				buf.append((char) c);
-			} else {
-				buf.append("%").append(Integer.toHexString((0x000000FF & c)));
-			}
-		}
-		return buf.toString();
 	}
 
 }
