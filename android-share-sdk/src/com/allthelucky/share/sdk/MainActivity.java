@@ -1,5 +1,7 @@
 package com.allthelucky.share.sdk;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -15,6 +17,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		ShareErrUtils.init(this);
 		testSina();
 		// testTecent();
 	}
@@ -36,6 +39,10 @@ public class MainActivity extends Activity {
 				@Override
 				public void onResult(int code, String result) {
 					System.out.println("status:" + code + ",result:" + result);
+					JSONObject object = Utils.stringToJSONObject(result);
+					if (object != null) {
+						ShareErrUtils.getMessage(ShareWebo.SINA, object.optInt("error_code"));
+					}
 				}
 			});
 		}
@@ -59,6 +66,10 @@ public class MainActivity extends Activity {
 				@Override
 				public void onResult(int code, String result) {
 					System.out.println("status:" + code + ",result:" + result);
+					JSONObject object = Utils.stringToJSONObject(result);
+					if (object != null) {
+						ShareErrUtils.getMessage(ShareWebo.TECENT, object.optInt("error_code"));
+					}
 				}
 			});
 		}
