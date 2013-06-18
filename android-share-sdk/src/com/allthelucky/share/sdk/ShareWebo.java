@@ -14,11 +14,11 @@ public class ShareWebo {
 	/**
 	 * 新浪微博应用ID
 	 */
-	public static final String SINA_KEY = "1228343418";
+	public static final String SINA_KEY = "aaaaaaaaa";
 	/**
 	 * 新浪微博应用SECRET
 	 */
-	public static final String SINA_SECRET = "1228343418";
+	public static final String SINA_SECRET = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	/**
 	 * 新浪微博授权地址
 	 */
@@ -34,11 +34,11 @@ public class ShareWebo {
 	/**
 	 * 腾讯微博应用ID
 	 */
-	public static final String TECENT_KEY = "801263295";
+	public static final String TECENT_KEY = "aaaaaaaaa";
 	/**
 	 * 腾讯微博应用SECRET
 	 */
-	public static final String TECENT_SECRET = "c04459e0802f19e213af7ac548984708";
+	public static final String TECENT_SECRET = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	/**
 	 * 腾讯微博应用授权地址
 	 */
@@ -50,6 +50,6 @@ public class ShareWebo {
 	/**
 	 * 微博授权回调地址（公用）
 	 */
-	public static final String CALLBACK_RUL = "http://h.qdone.net.cn/share/index.html";
+	public static final String CALLBACK_RUL = "http://xxx.xxx.com/xxx.html";
 
 }
