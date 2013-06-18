@@ -34,11 +34,11 @@ public class ShareWebo {
 	/**
 	 * 腾讯微博应用ID
 	 */
-	public static final String TECENT_KEY = "aaaaaaaaa";
+	public static final String TECENT_KEY = "bbbbbbbbb";
 	/**
 	 * 腾讯微博应用SECRET
 	 */
-	public static final String TECENT_SECRET = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	public static final String TECENT_SECRET = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
 	/**
 	 * 腾讯微博应用授权地址
 	 */
@@ -50,6 +50,6 @@ public class ShareWebo {
 	/**
 	 * 微博授权回调地址（公用）
 	 */
-	public static final String CALLBACK_RUL = "http://xxx.xxx.com/xxx.html";
+	public static final String CALLBACK_RUL = "http://zzz.zzzz.zzz/zz.html";
 
 }
