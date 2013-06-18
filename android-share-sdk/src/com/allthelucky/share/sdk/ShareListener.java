@@ -1,5 +1,11 @@
 package com.allthelucky.share.sdk;
 
+/**
+ * 分享微博结果通知回调
+ * 
+ * @author savant-pan
+ * 
+ */
 public interface ShareListener {
 	/**
 	 * 数据返回成功

@@ -24,6 +24,13 @@ public class ShareManager {
 
 	}
 
+	/**
+	 * 设置授权数据
+	 * 
+	 * @param context
+	 * @param type
+	 * @param responseData
+	 */
 	public static void setupAuth(Context context, int type, String responseData) {
 		SharedPreferences sharedPreferences = context.getSharedPreferences("auth-" + type, Context.MODE_PRIVATE);
 		Editor editor = sharedPreferences.edit();
@@ -42,7 +49,14 @@ public class ShareManager {
 		editor.commit();
 	}
 
-	public static SharedPreferences getAuth(Context context, int type) {
+	/**
+	 * 取授权参数
+	 * 
+	 * @param context
+	 * @param type
+	 * @return
+	 */
+	private static SharedPreferences getAuth(Context context, int type) {
 		return context.getSharedPreferences("auth-" + type, Context.MODE_PRIVATE);
 	}
 
@@ -66,7 +80,7 @@ public class ShareManager {
 	}
 
 	/**
-	 * 添加微博
+	 * 发布一条微博
 	 * 
 	 * @param context
 	 * @param type
@@ -105,7 +119,13 @@ public class ShareManager {
 		}
 	}
 
-	public static String getWeiboUrl(int type) {
+	/**
+	 * 取微博发布接口地址
+	 * 
+	 * @param type
+	 * @return
+	 */
+	private static String getWeiboUrl(int type) {
 		if (ShareWebo.SINA == type) {
 			return ShareWebo.SINA_URL;
 		} else {
@@ -113,7 +133,15 @@ public class ShareManager {
 		}
 	}
 
-	public static ShareParams addWeiboParams(Context context, int type, ShareParams shareParams) {
+	/**
+	 * 添加授权数据到参数列表
+	 * 
+	 * @param context
+	 * @param type
+	 * @param shareParams
+	 * @return
+	 */
+	private static ShareParams addWeiboParams(Context context, int type, ShareParams shareParams) {
 		SharedPreferences sharedPreferences = getAuth(context, type);
 		if (ShareWebo.SINA == type) {
 			shareParams.put("access_token", sharedPreferences.getString("access_token", ""));
@@ -128,7 +156,13 @@ public class ShareManager {
 		return shareParams;
 	}
 
-	public static String getAuthUrl(int type) {
+	/**
+	 * 取授权地址
+	 * 
+	 * @param type
+	 * @return
+	 */
+	private static String getAuthUrl(int type) {
 		if (ShareWebo.SINA == type) {
 			return ShareWebo.SINA_AUTH_URL + "?client_id=" + ShareWebo.SINA_KEY + "&response_type=token&redirect_uri="
 					+ ShareWebo.CALLBACK_RUL + "&display=mobile";

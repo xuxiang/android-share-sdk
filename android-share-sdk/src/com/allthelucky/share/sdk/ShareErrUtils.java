@@ -11,7 +11,7 @@ import android.content.Context;
 /**
  * 微博错误信码解析工具
  * 
- * @author pxw(2012-11-1)
+ * @author savant-pan
  * 
  */
 @SuppressLint("UseSparseArrays")
